@@ -1,0 +1,33 @@
+@import url(/src/assets/fontawesome/css/fontawesome.css);
+@import url(/src/assets/fontawesome/css/brands.css);
+@import url(/src/assets/fontawesome/css/solid.css);
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  @apply bg-slate-200 text-slate-700;
+
+  h1 {
+    @apply text-4xl font-bold;
+  }
+
+  h2 {
+    @apply text-2xl font-semibold;
+  }
+
+  h3 {
+    @apply text-xl;
+  }
+
+  h4 {
+    @apply text-lg;
+  }
+
+  input {
+    @apply bg-inherit border-current border-2 rounded px-1 h-8;
+  }
+
+  color-scheme: light dark;
+}
