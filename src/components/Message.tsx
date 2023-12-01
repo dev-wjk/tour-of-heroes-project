@@ -1,8 +1,12 @@
-import { useContext } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { Context } from '../context';
 
 export default function Message() {
   const { state, dispatch } = useContext(Context);
+  const [logs, setLogs] = useState<string[]>([]);
+  useEffect(() => {
+    setLogs(() => [...state.logs].reverse());
+  }, [state.logs.length]);
   return (
     <>
       {state.logs.length > 0 && (
@@ -16,7 +20,7 @@ export default function Message() {
             </button>
           </div>
           <div className="flex flex-col gap-4">
-            {state.logs.map((log: string, i: number) => (
+            {logs.map((log: string, i: number) => (
               <p className="leading-tight break-all" key={i}>
                 {log}
               </p>

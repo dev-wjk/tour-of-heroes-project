@@ -12,6 +12,7 @@ export default function Search() {
       <input
         className="w-full"
         id="search-box"
+        placeholder="Enter hero name"
         onChange={(event) =>
           dispatch({ type: 'SEARCH_HERO', payload: event.target.value })
         }
